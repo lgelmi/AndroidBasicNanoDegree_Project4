@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Height -->
+    <dimen name="HeaderHeight">64dp</dimen>
+    <dimen name="FooterHeight">64dp</dimen>
+    <!-- Fonts -->
+    <!-- Padding -->
+    <dimen name="StandardPadding">8dp</dimen>
+    <dimen name="KiloPadding">16dp</dimen>
+    <dimen name="MegaPadding">32dp</dimen>
+    <dimen name="HalfGigaPadding">48dp</dimen>
+    <dimen name="GigaPadding">64dp</dimen>
+    <dimen name="TeraPadding">128dp</dimen>
+</resources>

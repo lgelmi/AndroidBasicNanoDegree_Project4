@@ -1,18 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="com.example.android.ferdecavall.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:id="@+id/AlbumImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/KiloPadding"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/AlbumDescription"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/ferdecavallalbum" />
+
+        <TextView
+            android:id="@+id/BandName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/AlbumImage"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="serif"
+            android:padding="@dimen/StandardPadding"
+            android:text="@string/BandLink"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/BandName" />
+
+        <ImageView
+            android:id="@+id/Site"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/BandName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/StandardPadding"
+            android:layout_marginEnd="@dimen/StandardPadding"
+            android:layout_marginStart="@dimen/StandardPadding"
+            android:layout_marginTop="@dimen/MegaPadding"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/SiteDescription"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/menagramasite" />
+
+        <ImageView
+            android:id="@+id/Facebook"
+            android:layout_width="@dimen/StandardButtonHeight"
+            android:layout_height="@dimen/StandardButtonHeight"
+            android:layout_alignTop="@id/Youtube"
+            android:layout_marginEnd="@dimen/StandardPadding"
+            android:layout_marginStart="@dimen/StandardPadding"
+            android:layout_toStartOf="@id/Twitter"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/SocialButton"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/facebook" />
+
+        <ImageView
+            android:id="@+id/Twitter"
+            android:layout_width="@dimen/StandardButtonHeight"
+            android:layout_height="@dimen/StandardButtonHeight"
+            android:layout_alignBottom="@id/Youtube"
+            android:layout_alignTop="@id/Youtube"
+            android:layout_marginEnd="@dimen/StandardPadding"
+            android:layout_marginStart="@dimen/StandardPadding"
+            android:layout_toStartOf="@id/Youtube"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/SocialButton"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/twitter" />
+
+        <ImageView
+            android:id="@+id/Youtube"
+            android:layout_width="@dimen/StandardButtonHeight"
+            android:layout_height="@dimen/StandardButtonHeight"
+            android:layout_below="@id/Site"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="@dimen/StandardPadding"
+            android:layout_marginStart="@dimen/StandardPadding"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/SiteDescription"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/youtube" />
+
+        <ImageView
+            android:id="@+id/Instagram"
+            android:layout_width="@dimen/StandardButtonHeight"
+            android:layout_height="@dimen/StandardButtonHeight"
+            android:layout_alignTop="@id/Youtube"
+            android:layout_marginEnd="@dimen/StandardPadding"
+            android:layout_marginStart="@dimen/StandardPadding"
+            android:layout_toEndOf="@id/Youtube"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/SiteDescription"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/instagram" />
+
+        <ImageView
+            android:id="@+id/Spotify"
+            android:layout_width="@dimen/StandardButtonHeight"
+            android:layout_height="@dimen/StandardButtonHeight"
+            android:layout_alignTop="@id/Youtube"
+            android:layout_marginEnd="@dimen/StandardPadding"
+            android:layout_marginStart="@dimen/StandardPadding"
+            android:layout_toEndOf="@id/Instagram"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/SiteDescription"
+            android:scaleType="fitEnd"
+            app:srcCompat="@drawable/spotify" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Youtube"
+            android:layout_margin="@dimen/StandardPadding"
+            android:text="@string/DemoLongString"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/Credits" />
+
+    </RelativeLayout>
+
+</ScrollView>

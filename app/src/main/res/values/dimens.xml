@@ -3,7 +3,10 @@
     <!-- Height -->
     <dimen name="HeaderHeight">64dp</dimen>
     <dimen name="FooterHeight">64dp</dimen>
+    <dimen name="StandardButtonHeight">36dp</dimen>
     <!-- Fonts -->
+    <dimen name="BandName">24sp</dimen>
+    <dimen name="Credits">10sp</dimen>
     <!-- Padding -->
     <dimen name="StandardPadding">8dp</dimen>
     <dimen name="KiloPadding">16dp</dimen>

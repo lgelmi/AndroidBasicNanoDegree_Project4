@@ -1,12 +1,15 @@
 package com.example.android.ferdecavall;
 
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.view.View;
+import android.widget.TextView;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +39,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // TODO band page
+        band.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*
+                Opens the Band page
+                 */
+                Intent bandIntent = new Intent(MainActivity.this, MenagramasActivity.class);
+                startActivity(bandIntent);
+            }
+        });
+
         site.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,16 +124,20 @@ public class MainActivity extends AppCompatActivity {
                 /*
                 Redirects to Fer De Cavall spotify album.
                  */
-                Uri uri = Uri.parse("https://open.spotify.com/album/0druAvgYY0O1eUCaPmCweN");
+                Uri uri = Uri.parse("https://open.spotify" +
+                        ".com/album/41aRLbOHk8jkOEKs8nZMZw?si=L_OkAd8ISjGnvcwaxeCSiw");
                 if (isAppInstalled("com.instagram.android"))
-                    uri = Uri.parse("spotify:album:0druAvgYY0O1eUCaPmCweN");
+                    uri = Uri.parse
+                            ("spotify:album:41aRLbOHk8jkOEKs8nZMZw?si=L_OkAd8ISjGnvcwaxeCSiw");
                 Intent instagramIntent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(instagramIntent);
             }
         });
-//        MediaPlayer mp = MediaPlayer.create(this, getResources().getIdentifier("fora", "raw",
-//                getPackageName()));
-//        mp.start();
+        try {
+            loadJSON();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     boolean isAppInstalled(String uri) {
@@ -130,6 +147,32 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } catch (PackageManager.NameNotFoundException e) {
             return false;
+        }
+    }
+
+    private void loadJSON() throws IOException {
+        /*
+        Reads my JSON file.
+
+        This should be heavily improved for robustness, but I don't think it is worth it in this
+        case.
+         */
+        try (JsonReader reader = new JsonReader(new InputStreamReader(getAssets().open
+                ("FerDeCavall.json"), "UTF-8"))) {
+            reader.beginObject();
+            while (reader.hasNext()) {
+                String name = reader.nextName();
+                switch (name) {
+                    case "credits":
+                        TextView creditsView = findViewById(R.id.Credits);
+                        creditsView.setText(reader.nextString());
+                        break;
+                    default:
+                        reader.skipValue();
+                        break;
+                }
+            }
+            reader.endObject();
         }
     }
 }

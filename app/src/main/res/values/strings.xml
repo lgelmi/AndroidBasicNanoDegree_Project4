@@ -10,6 +10,7 @@
     <string name="SiteDescription">Menagrama Official site icon. Clicking it should lead to it.</string>
     <string name="SocialButton">One of many buttons to reach social platforms.</string>
     <!-- Song List Item -->
+    <string name="SongName">%d - %s</string>
     <string name="SongDuration">%d:%d</string>
     <string name="PlayDescription">Hit here to start the song!</string>
 

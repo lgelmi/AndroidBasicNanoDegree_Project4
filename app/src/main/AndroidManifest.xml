@@ -21,6 +21,11 @@
             android:theme="@style/SongTheme">
 
         </activity>
+        <activity
+            android:name=".MenagramasActivity"
+            android:label="@string/BandLink" >
+
+        </activity>
     </application>
 
 </manifest>

@@ -3,8 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/leather"
     android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/songName"
+        android:layout_alignTop="@id/songName"
+        android:background="@drawable/leather"
+        android:scaleType="matrix" />
 
     <TextView
         android:id="@+id/songName"
@@ -12,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_margin="@dimen/KiloPadding"
+        android:padding="@dimen/KiloPadding"
         android:layout_toStartOf="@id/songDuration"
         android:fontFamily="serif"
         android:text="@string/DemoLongString"

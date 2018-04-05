@@ -3,6 +3,7 @@ package com.example.android.ferdecavall;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +22,8 @@ import java.util.ArrayList;
 
 public class SongAdapter extends ArrayAdapter<Song> {
 
-    private Song playingSong;
-    private ImageButton playingButton;
+    Song playingSong;
+    ImageButton playingButton;
 
     SongAdapter(Activity activity, ArrayList<Song> songList) {
         super(activity, R.layout.song_list_item, songList);
@@ -49,18 +50,42 @@ public class SongAdapter extends ArrayAdapter<Song> {
             durationView.setText(getContext().getString(R.string.SongDuration, durationM,
                     durationS));
             final ImageButton playButton = listItemView.findViewById(R.id.PlayButton);
+            if (currentSong.isPlaying())
+                playButton.setImageResource(android.R.drawable.ic_media_pause);
+            else
+                playButton.setImageResource(android.R.drawable.ic_media_play);
             playButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                 /*
                 Start the song
                  */
+//                    ImageButton button = (ImageButton) view;
+//                    if (currentSong.isPlaying()) {
+//                        currentSong.pause();
+//                        button.setImageResource(android.R.drawable.ic_media_play);
+//                    } else {
+//                        if (playingSong != null) {
+//                            try {
+//                                playingSong.stop();
+//                            } catch (IOException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                        if (playingButton != null) {
+//                            playingButton.setImageResource(android.R.drawable.ic_media_play);
+//                        }
+//                        currentSong.start();
+//                        button.setImageResource(android.R.drawable.ic_media_pause);
+//                        playingSong = currentSong;
+//                        playingButton = button;
+//                    }
                     ImageButton button = (ImageButton) view;
                     if (currentSong.isPlaying()) {
                         currentSong.pause();
                         button.setImageResource(android.R.drawable.ic_media_play);
                     } else {
-                        if (playingSong != null) {
+                        if (playingSong != null && playingSong != currentSong) {
                             try {
                                 playingSong.stop();
                             } catch (IOException e) {
@@ -78,8 +103,6 @@ public class SongAdapter extends ArrayAdapter<Song> {
                 }
             });
         }
-
-
         return listItemView;
     }
 }

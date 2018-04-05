@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         View album = findViewById(R.id.AlbumImage);
-        View band = findViewById(R.id.BandName);
         View site = findViewById(R.id.Site);
         View facebook = findViewById(R.id.Facebook);
         View twitter = findViewById(R.id.Twitter);
@@ -36,17 +35,6 @@ public class MainActivity extends AppCompatActivity {
                  */
                 Intent songIntent = new Intent(MainActivity.this, SongActivity.class);
                 startActivity(songIntent);
-            }
-        });
-
-        band.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*
-                Opens the Band page
-                 */
-                Intent bandIntent = new Intent(MainActivity.this, MenagramasActivity.class);
-                startActivity(bandIntent);
             }
         });
 

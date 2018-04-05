@@ -17,18 +17,19 @@ import java.util.Objects;
 
 public class SongActivity extends AppCompatActivity {
 
+    ArrayList<Song> songList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song);
-        ArrayList<Song> songList = null;
+        songList = null;
         try {
             songList = loadJSON();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SongAdapter adapter =
-                new SongAdapter(this, songList);
+        SongAdapter adapter = new SongAdapter(this, songList);
         ListView listView = findViewById(R.id.songList);
         listView.setAdapter(adapter);
     }
@@ -110,4 +111,10 @@ public class SongActivity extends AppCompatActivity {
         return songList;
     }
 
+    @Override
+    protected void onDestroy() {
+        for (int i=0; i < songList.size(); i++)
+            songList.get(i).release();
+        super.onDestroy();
+    }
 }

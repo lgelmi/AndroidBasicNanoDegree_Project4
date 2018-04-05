@@ -86,6 +86,10 @@ public class Song {
         player.prepare();
     }
 
+    void release() {
+        player.release();
+    }
+
     int getDuration(){
         return player.getDuration();
     }

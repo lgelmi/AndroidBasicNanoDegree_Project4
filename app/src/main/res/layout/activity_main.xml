@@ -5,129 +5,115 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:fillViewport="true"
     tools:context="com.example.android.ferdecavall.MainActivity">
 
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/AlbumImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_above="@id/Site"
             android:layout_centerHorizontal="true"
             android:layout_margin="@dimen/KiloPadding"
-            android:adjustViewBounds="true"
             android:contentDescription="@string/AlbumDescription"
-            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toTopOf="@id/Site"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ferdecavallalbum" />
-
-        <TextView
-            android:id="@+id/BandName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/AlbumImage"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="serif"
-            android:padding="@dimen/StandardPadding"
-            android:text="@string/BandLink"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/BandName" />
 
         <ImageView
             android:id="@+id/Site"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/BandName"
+            android:layout_above="@id/Youtube"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/StandardPadding"
-            android:layout_marginEnd="@dimen/StandardPadding"
-            android:layout_marginStart="@dimen/StandardPadding"
-            android:layout_marginTop="@dimen/MegaPadding"
+            android:layout_margin="@dimen/StandardPadding"
             android:adjustViewBounds="true"
             android:contentDescription="@string/SiteDescription"
             android:scaleType="fitEnd"
+            app:layout_constraintBottom_toTopOf="@+id/Youtube"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/menagramasite" />
 
         <ImageView
             android:id="@+id/Facebook"
             android:layout_width="@dimen/StandardButtonHeight"
             android:layout_height="@dimen/StandardButtonHeight"
-            android:layout_alignTop="@id/Youtube"
-            android:layout_marginEnd="@dimen/StandardPadding"
-            android:layout_marginStart="@dimen/StandardPadding"
-            android:layout_toStartOf="@id/Twitter"
-            android:adjustViewBounds="true"
+            android:layout_marginBottom="8dp"
             android:contentDescription="@string/SocialButton"
-            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toTopOf="@+id/Credits"
+            app:layout_constraintEnd_toStartOf="@id/Twitter"
+            app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/facebook" />
 
         <ImageView
             android:id="@+id/Twitter"
             android:layout_width="@dimen/StandardButtonHeight"
             android:layout_height="@dimen/StandardButtonHeight"
-            android:layout_alignBottom="@id/Youtube"
-            android:layout_alignTop="@id/Youtube"
-            android:layout_marginEnd="@dimen/StandardPadding"
-            android:layout_marginStart="@dimen/StandardPadding"
-            android:layout_toStartOf="@id/Youtube"
-            android:adjustViewBounds="true"
+            android:layout_marginBottom="8dp"
             android:contentDescription="@string/SocialButton"
-            android:scaleType="fitEnd"
+            app:layout_constraintEnd_toStartOf="@id/Youtube"
+            app:layout_constraintBottom_toTopOf="@+id/Credits"
+            app:layout_constraintStart_toEndOf="@+id/Facebook"
             app:srcCompat="@drawable/twitter" />
 
         <ImageView
             android:id="@+id/Youtube"
             android:layout_width="@dimen/StandardButtonHeight"
             android:layout_height="@dimen/StandardButtonHeight"
-            android:layout_below="@id/Site"
-            android:layout_centerHorizontal="true"
-            android:layout_marginEnd="@dimen/StandardPadding"
-            android:layout_marginStart="@dimen/StandardPadding"
-            android:adjustViewBounds="true"
+            android:layout_marginTop="@dimen/StandardPadding"
+            android:layout_marginBottom="8dp"
             android:contentDescription="@string/SiteDescription"
-            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toTopOf="@+id/Credits"
+            app:layout_constraintEnd_toStartOf="@+id/Instagram"
+            app:layout_constraintStart_toEndOf="@+id/Twitter"
             app:srcCompat="@drawable/youtube" />
 
         <ImageView
             android:id="@+id/Instagram"
             android:layout_width="@dimen/StandardButtonHeight"
             android:layout_height="@dimen/StandardButtonHeight"
-            android:layout_alignTop="@id/Youtube"
-            android:layout_marginEnd="@dimen/StandardPadding"
-            android:layout_marginStart="@dimen/StandardPadding"
-            android:layout_toEndOf="@id/Youtube"
-            android:adjustViewBounds="true"
+            android:layout_marginBottom="8dp"
             android:contentDescription="@string/SiteDescription"
-            android:scaleType="fitEnd"
+            app:layout_constraintStart_toEndOf="@id/Youtube"
+            app:layout_constraintBottom_toTopOf="@+id/Credits"
+            app:layout_constraintEnd_toStartOf="@+id/Spotify"
             app:srcCompat="@drawable/instagram" />
 
         <ImageView
             android:id="@+id/Spotify"
             android:layout_width="@dimen/StandardButtonHeight"
             android:layout_height="@dimen/StandardButtonHeight"
-            android:layout_alignTop="@id/Youtube"
-            android:layout_marginEnd="@dimen/StandardPadding"
-            android:layout_marginStart="@dimen/StandardPadding"
+            android:layout_marginBottom="8dp"
             android:layout_toEndOf="@id/Instagram"
-            android:adjustViewBounds="true"
             android:contentDescription="@string/SiteDescription"
             android:scaleType="fitEnd"
+            app:layout_constraintStart_toEndOf="@id/Instagram"
+            app:layout_constraintBottom_toTopOf="@+id/Credits"
+            app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/spotify" />
 
         <TextView
             android:id="@+id/Credits"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Youtube"
             android:layout_margin="@dimen/StandardPadding"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
             android:text="@string/DemoLongString"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/Credits" />
+            android:textSize="@dimen/Credits"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

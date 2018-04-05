@@ -6,12 +6,12 @@
     <string name="DemoLongString">This is a Demo long String that allows to check how the layout manages to handle long strings so don\'t worry about it not making sense. Unless this is the final version! That would be a problem.</string>
     <!-- Main -->
     <string name="AlbumDescription">Fer De Cavall album cover. Clicking it should lead to the songs.</string>
-    <string name="BandLink">MENAGRAMA\'s stories</string>
     <string name="SiteDescription">Menagrama Official site icon. Clicking it should lead to it.</string>
     <string name="SocialButton">One of many buttons to reach social platforms.</string>
     <!-- Song List Item -->
     <string name="SongName">%d - %s</string>
     <string name="SongDuration">%d:%d</string>
     <string name="PlayDescription">Hit here to start the song!</string>
+    <string name="ListItemBack">A leather background to recall the album cover!</string>
 
 </resources>

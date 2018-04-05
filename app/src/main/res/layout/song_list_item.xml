@@ -11,7 +11,8 @@
         android:layout_alignBottom="@id/songName"
         android:layout_alignTop="@id/songName"
         android:background="@drawable/leather"
-        android:scaleType="matrix" />
+        android:scaleType="matrix"
+        android:contentDescription="@string/ListItemBack" />
 
     <TextView
         android:id="@+id/songName"

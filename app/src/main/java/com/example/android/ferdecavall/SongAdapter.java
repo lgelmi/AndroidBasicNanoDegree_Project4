@@ -60,26 +60,6 @@ public class SongAdapter extends ArrayAdapter<Song> {
                 /*
                 Start the song
                  */
-//                    ImageButton button = (ImageButton) view;
-//                    if (currentSong.isPlaying()) {
-//                        currentSong.pause();
-//                        button.setImageResource(android.R.drawable.ic_media_play);
-//                    } else {
-//                        if (playingSong != null) {
-//                            try {
-//                                playingSong.stop();
-//                            } catch (IOException e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//                        if (playingButton != null) {
-//                            playingButton.setImageResource(android.R.drawable.ic_media_play);
-//                        }
-//                        currentSong.start();
-//                        button.setImageResource(android.R.drawable.ic_media_pause);
-//                        playingSong = currentSong;
-//                        playingButton = button;
-//                    }
                     ImageButton button = (ImageButton) view;
                     if (currentSong.isPlaying()) {
                         currentSong.pause();

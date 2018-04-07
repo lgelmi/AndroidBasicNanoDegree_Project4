@@ -32,6 +32,11 @@ public class SongActivity extends AppCompatActivity {
         SongAdapter adapter = new SongAdapter(this, songList);
         ListView listView = findViewById(R.id.songList);
         listView.setAdapter(adapter);
+        try {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        } catch (NullPointerException e) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
 
@@ -113,7 +118,7 @@ public class SongActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        for (int i=0; i < songList.size(); i++)
+        for (int i = 0; i < songList.size(); i++)
             songList.get(i).release();
         super.onDestroy();
     }

@@ -19,7 +19,12 @@
         <activity
             android:name=".SongActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName="com.example.android.ferdecavall.MainActivity"
             android:theme="@style/SongTheme">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
 
         </activity>
     </application>
